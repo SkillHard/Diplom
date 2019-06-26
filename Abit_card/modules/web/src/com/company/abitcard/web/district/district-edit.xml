@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.abitcard.web.district.DistrictEdit"
+        datasource="districtDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.abitcard.web.district">
+    <dsContext>
+        <datasource id="districtDs"
+                    class="com.company.abitcard.entity.District"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions" spacing="true">
+        <fieldGroup id="fieldGroup" datasource="districtDs">
+            <column width="250px">
+                <field property="district"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

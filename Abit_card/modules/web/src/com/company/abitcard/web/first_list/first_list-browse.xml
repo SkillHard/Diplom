@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="first_listsTable"
+        messagesPack="com.company.abitcard.web.first_list">
+    <data readOnly="true">
+        <collection id="first_listsDc"
+                    class="com.company.abitcard.entity.First_list"
+                    view="first_list-view">
+            <loader id="first_listsDl">
+                <query>
+                    <![CDATA[select e from abitcard_First_list e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="first_listsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="first_listsTable"
+                dataLoader="first_listsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="first_listsTable"
+                    width="100%"
+                    dataContainer="first_listsDc"
+                    multiselect="true"
+                    presentations="true">
+            <actions>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+                <action id="refresh" type="refresh"/>
+                <action id="add" type="add"/>
+                <action id="exclude" type="exclude"/>
+                <action id="excel" type="excel"/>
+            </actions>
+            <columns>
+                <column id="id_person"/>
+                <column id="name"/>
+                <column id="disciplin_ball1"/>
+                <column id="disciplin_ball2"/>
+                <column id="disciplin_ball3"/>
+                <column id="sumball"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="editBtn" action="first_listsTable.edit"/>
+                <button id="removeBtn" action="first_listsTable.remove"/>
+                <button id="refreshBtn" action="first_listsTable.refresh"/>
+                <button id="addBtn" action="first_listsTable.add"/>
+                <button id="excludeBtn" action="first_listsTable.exclude"/>
+                <button id="excelBtn" action="first_listsTable.excel"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

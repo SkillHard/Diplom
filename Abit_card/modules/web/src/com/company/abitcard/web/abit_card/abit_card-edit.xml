@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.abitcard.web.abit_card">
+    <data>
+        <instance id="abit_cardDc"
+                  class="com.company.abitcard.entity.Abit_card"
+                  view="abit_card-view">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="AUTO"
+                width="800"
+                modal="true"
+                forceDialog="true"/>
+    <layout spacing="true" height="700px">
+        <tabSheet id="tabSheet" height="500px" >
+        <tab id="tab_1" margin="true,false,false,false" spacing="true" caption="msg://Tab1"
+             description="msg://Tab1">
+            <scrollBox id="scrollBox" spacing="true" height="600px">
+                <form id="form" dataContainer="abit_cardDc">
+                    <column width="250px">
+                        <textField id="firstnameField" property="firstname"/>
+                        <textField id="secondnameField" property="secondname"/>
+                        <textField id="patronymicField" property="patronymic"/>
+                        <dateField id="dateField" property="date"/>
+                        <optionsGroup id="optionsGroup" property="training_form"/>
+                        <optionsGroup id="optionsGroup_1" property="education_form"/>
+                        <optionsGroup id="genderField" property="gender"/>
+                        <maskedField id="number_phoneField" mask="+7(###)###-##-##" valueMode="masked" property="number_phone" />
+                        <textField id="emailField" property="email"/>
+                        <checkBox id="first_educationField" property="first_education"/>
+                    </column>
+                </form>
+            </scrollBox>
+        </tab>
+            <tab id="tab" margin="true,false,false,false" spacing="true" caption="msg://tab2" description="msg://tab2">
+                <scrollBox id="scrollBox_1" height="700px">
+                    <form id="form1" dataContainer="abit_cardDc">
+                        <column id="column">
+                            <lookupField id="nationField" property="nation"/>
+                            <textField id="serias_numberField" property="serias_number"/>
+                            <textField id="placeField" property="place"/>
+                            <dateField id="date_passportField" property="date_passport"/>
+                            <lookupField id="id_documentsField" property="id_documents"/>
+                            <textField id="countryField" property="country"/>
+                            <pickerField id="regionField" property="region">
+                                <actions>
+                                    <action id="lookup" type="picker_lookup"/>
+                                    <action id="clear" type="picker_clear"/>
+                                </actions>
+                            </pickerField>
+                            <pickerField id="cityField" property="city">
+                                <actions>
+                                    <action id="lookup" type="picker_lookup"/>
+                                    <action id="clear" type="picker_clear"/>
+                                </actions>
+                            </pickerField>
+                            <pickerField id="districtField" property="district">
+                                <actions>
+                                    <action id="lookup" type="picker_lookup"/>
+                                    <action id="clear" type="picker_clear"/>
+                                </actions>
+                            </pickerField>
+                            <pickerField id="streetField" property="street">
+                                <actions>
+                                    <action id="lookup" type="picker_lookup"/>
+                                    <action id="clear" type="picker_clear"/>
+                                </actions>
+                            </pickerField>
+                            <textField id="houseField" property="house"/>
+                            <textField id="flatField" property="flat"/>
+                            <textField id="postindexField" property="postindex"/>
+                        </column>
+                    </form>
+                </scrollBox> </tab>
+
+    <tab id="tab2" margin="true,false,false,false" spacing="true" caption="msg://tab3">
+        <scrollBox id="scrollBox_2" height="400px">
+            <form id="form2" dataContainer="abit_cardDc">
+                <column id="column2">
+                    <pickerField id="firstField" property="first">
+                        <actions>
+                            <action id="lookup" type="picker_lookup"/>
+                            <action id="clear" type="picker_clear"/>
+                        </actions>
+                    </pickerField>
+                    <pickerField id="secondField" property="second">
+                        <actions>
+                            <action id="lookup" type="picker_lookup"/>
+                            <action id="clear" type="picker_clear"/>
+                        </actions>
+                    </pickerField>
+                    <pickerField id="thirdField" property="third">
+                        <actions>
+                            <action id="lookup" type="picker_lookup"/>
+                            <action id="clear" type="picker_clear"/>
+                        </actions>
+                    </pickerField>
+                    <lookupField id="disciplin1Field" property="disciplin1"/>
+                    <textField id="ball1Field" property="ball1"/>
+                    <lookupField id="disciplin2Field" property="disciplin2"/>
+                    <textField id="ball2Field" property="ball2"/>
+                    <lookupField id="disciplin3Field" property="disciplin3"/>
+                    <textField id="ball3Field" property="ball3"/>
+                    <lookupField id="disciplin4Field" property="disciplin4"/>
+                    <textField id="ball4Field" property="ball4"/>
+                    <lookupField id="disciplin5Field" property="disciplin5"/>
+                    <textField id="ball5Field" property="ball5"/>
+                    <dateField id="date_surrenderField" property="date_surrender"/>
+                    <lookupField id="individual_achievementsField" property="individual_achievements"/>
+                    <textField id="ball6Field" property="ball6"/>
+                </column>
+            </form>
+        </scrollBox>
+    </tab>
+</tabSheet>
+
+        <hbox id="editActions" spacing="true" align="BOTTOM_LEFT">
+            <button action="windowCommitAndClose"/>
+            <button action="windowCommit"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

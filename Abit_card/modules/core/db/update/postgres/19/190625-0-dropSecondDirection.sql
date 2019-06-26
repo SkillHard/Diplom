@@ -1,0 +1,1 @@
+alter table abitcard_second_direction rename to ABITCARD_SECOND_DIRECTION__U40184 ;

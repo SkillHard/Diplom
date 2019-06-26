@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="abit_cardsTable"
+        messagesPack="com.company.abitcard.web.abit_card">
+    <data readOnly="true">
+        <collection id="abit_cardsDc"
+                    class="com.company.abitcard.entity.Abit_card"
+                    view="abit_card-view">
+            <loader id="abit_cardsDl">
+                <query>
+                    <![CDATA[select e from abitcard_Abit_card e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="abit_cardsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="abit_cardsTable"
+                dataLoader="abit_cardsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="abit_cardsTable"
+                    width="100%"
+                    dataContainer="abit_cardsDc"
+                    multiselect="true"
+                    presentations="true">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+                <action id="refresh" type="refresh"/>
+                <action id="add" type="add"/>
+                <action id="excel" type="excel"/>
+            </actions>
+            <columns>
+                <column id="firstname"/>
+                <column id="secondname"/>
+                <column id="patronymic"/>
+                <column id="date"/>
+                <column id="gender"/>
+                <column id="training_form"/>
+                <column id="education_form"/>
+                <column id="number_phone"/>
+                <column id="email"/>
+                <column id="first_education"/>
+                <column id="first"/>
+                <column id="second"/>
+                <column id="third"/>
+                <column id="disciplin1"/>
+                <column id="ball1"/>
+                <column id="disciplin2"/>
+                <column id="ball2"/>
+                <column id="disciplin3"/>
+                <column id="ball3"/>
+                <column id="disciplin4"/>
+                <column id="ball4"/>
+                <column id="disciplin5"/>
+                <column id="ball5"/>
+                <column id="date_surrender"/>
+                <column id="individual_achievements"/>
+                <column id="ball6"/>
+                <column id="nation"/>
+                <column id="id_documents"/>
+                <column id="serias_number"/>
+                <column id="place"/>
+                <column id="date_passport"/>
+                <column id="country"/>
+                <column id="region"/>
+                <column id="city"/>
+                <column id="district"/>
+                <column id="street"/>
+                <column id="house"/>
+                <column id="flat"/>
+                <column id="postindex"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="abit_cardsTable.create"/>
+                <button id="editBtn" action="abit_cardsTable.edit"/>
+                <button id="removeBtn" action="abit_cardsTable.remove"/>
+                <button id="refreshBtn" action="abit_cardsTable.refresh"/>
+                <button id="addBtn" action="abit_cardsTable.add"/>
+                <button id="excelBtn" action="abit_cardsTable.excel"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

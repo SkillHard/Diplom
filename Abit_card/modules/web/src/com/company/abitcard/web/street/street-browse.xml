@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.abitcard.web.street.StreetBrowse"
+        focusComponent="streetsTable"
+        lookupComponent="streetsTable"
+        messagesPack="com.company.abitcard.web.street">
+    <dsContext>
+        <collectionDatasource id="streetsDs"
+                              class="com.company.abitcard.entity.Street"
+                              view="_local">
+            <query>
+                <![CDATA[select e from abitcard_Street e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="streetsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="streetsTable"
+                datasource="streetsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="streetsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="street"/>
+            </columns>
+            <rows datasource="streetsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="streetsTable.create"/>
+                <button id="editBtn" action="streetsTable.edit"/>
+                <button id="removeBtn" action="streetsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

@@ -1,0 +1,2 @@
+alter table ABITCARD_ABIT_CARD add constraint FK_ABITCARD_ABIT_CARD_ON_REGION_REGION foreign key (REGION_REGION) references region(region);
+create index IDX_ABITCARD_ABIT_CARD_ON_REGION_REGION on ABITCARD_ABIT_CARD (REGION_REGION);

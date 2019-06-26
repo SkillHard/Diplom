@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.abitcard.web.district.DistrictBrowse"
+        focusComponent="districtsTable"
+        lookupComponent="districtsTable"
+        messagesPack="com.company.abitcard.web.district">
+    <dsContext>
+        <collectionDatasource id="districtsDs"
+                              class="com.company.abitcard.entity.District"
+                              view="_local">
+            <query>
+                <![CDATA[select e from abitcard_District e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="districtsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="districtsTable"
+                datasource="districtsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="districtsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="district"/>
+            </columns>
+            <rows datasource="districtsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="districtsTable.create"/>
+                <button id="editBtn" action="districtsTable.edit"/>
+                <button id="removeBtn" action="districtsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

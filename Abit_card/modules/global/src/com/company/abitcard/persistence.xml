@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="Abit_card" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.abitcard.entity.Abit_card</class>
+        <class>com.company.abitcard.entity.First_direction</class>
+        <class>com.company.abitcard.entity.First_list</class>
+        <class>com.company.abitcard.entity.Region</class>
+        <class>com.company.abitcard.entity.City</class>
+        <class>com.company.abitcard.entity.District</class>
+        <class>com.company.abitcard.entity.Street</class>
+        <class>com.company.abitcard.entity.Direction</class>
+        <class>com.company.abitcard.entity.Connection</class>
+    </persistence-unit>
+</persistence>

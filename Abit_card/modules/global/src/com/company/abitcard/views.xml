@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="abitcard_First_list" name="first_list-view" extends="_local"/>
+    <view entity="abitcard_Connection" name="connection-view" extends="_local">
+        <property name="first" view="_minimal"/>
+        <property name="second" view="_minimal"/>
+        <property name="third" view="_minimal"/>
+    </view>
+    <view entity="abitcard_Abit_card" name="abit_card-view" extends="_local">
+        <property name="first" view="_minimal"/>
+        <property name="second" view="_minimal"/>
+        <property name="third" view="_minimal"/>
+        <property name="region" view="_minimal"/>
+        <property name="city" view="_minimal"/>
+        <property name="district" view="_minimal"/>
+        <property name="street" view="_minimal"/>
+
+    </view>
+</views>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="directionsTable"
+        messagesPack="com.company.abitcard.web.direction">
+    <data readOnly="true">
+        <collection id="directionsDc"
+                    class="com.company.abitcard.entity.Direction"
+                    view="_local">
+            <loader id="directionsDl">
+                <query>
+                    <![CDATA[select e from abitcard_Direction e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="directionsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="directionsTable"
+                dataLoader="directionsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="directionsTable"
+                    width="100%"
+                    dataContainer="directionsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="shifr"/>
+                <column id="faculty"/>
+                <column id="direction"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="directionsTable.create"/>
+                <button id="editBtn" action="directionsTable.edit"/>
+                <button id="removeBtn" action="directionsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

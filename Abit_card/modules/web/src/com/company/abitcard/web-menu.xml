@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-abitcard" insertBefore="administration">
+        <item screen="abitcard_Abit_card.browse"/>
+        <item screen="abitcard_Connection.browse"/>
+        <item screen="abitcard_First_list.browse"/>
+        <item screen="abitcard_Direction.browse"/>
+    </menu>
+</menu-config>

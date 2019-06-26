@@ -1,0 +1,2 @@
+alter table ABITCARD_ABIT_CARD add constraint FK_ABITCARD_ABIT_CARD_ON_STREET_STREET foreign key (STREET_STREET) references street(street);
+create index IDX_ABITCARD_ABIT_CARD_ON_STREET_STREET on ABITCARD_ABIT_CARD (STREET_STREET);

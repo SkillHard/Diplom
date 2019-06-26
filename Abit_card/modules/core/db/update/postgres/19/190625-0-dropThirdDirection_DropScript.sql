@@ -1,0 +1,1 @@
+drop table if exists ABITCARD_THIRD_DIRECTION__U67304 cascade ;

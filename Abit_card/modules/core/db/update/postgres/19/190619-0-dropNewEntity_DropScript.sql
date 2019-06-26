@@ -1,0 +1,1 @@
+drop table if exists ABITCARD_NEW_ENTITY__U49028 cascade ;
